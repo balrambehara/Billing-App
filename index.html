@@ -3,30 +3,68 @@
     <head>
         <title>Billing page</title>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="styles/style.css">
+        <script src="js/script.js"></script>
     </head>
     <body>
-        <div id="tableContainer">
+       <!--<div style="text-align: right"  id="printing"><a href="#" target="_blank" onclick="printBill()">Print Slip</a></div>0-->
+        <!--<div style="text-align: right" onclick="printBill()" id="printing">Print Slip</div>-->
+        <div id="formContainer">
             <h1>Billing Application Version::1.0</h1>
             <form>
-                Product Id:: <input type="text" placeholder="Enter Product Id" name="" id="">
+                Product Id:: <input type="text" placeholder="Enter Product Id" name="" id="pId">
                 <br>
-                 Product Name:: <input type="text" placeholder="Enter Product Name" name="" id="">
+                 Product Name:: <input type="text" placeholder="Enter Product Name" name="" id="pName">
                    <br>
-                  Product Model:: <input type="text" placeholder="Enter Product Model" name="" id="">
+                  Product Model:: <input type="text" placeholder="Enter Product Model" name="" id="pModel">
                   
                  <br>
-                  Product Price:: <input type="text" placeholder="Enter Product Price" name="" id="">
+                  Product Price:: <input type="text" placeholder="Enter Product Price" name="" id="pPrice">
                   <br>
-                  Product Quantity:: <input type="text" placeholder="Enter Product Quantity" name="" id="">
+                  Product Quantity:: <input type="number" placeholder="Enter Product Quantity" name="" id="pQuantity">
                   <br>
-                  <input type="button" value="Clear All">
+                  <input type="reset" value="Clear All">
                   
                   &nbsp;   &nbsp;
-                  <input type="button" value="Add Item">
+                  <input type="button" value="Add Item" onclick="add()">
+                   &nbsp;   &nbsp;
+                  <input type="button" value="Print Bill" onclick="printBill()">
                   
             </form>
             
         </div>
-        <div id="tableContainer"></div>
+        <br>
+        <br>
+     
+        <div id="tableContainer">
+            <h2 id="billHead"> Your Items::</h2>
+            <!-- Table for other formalities like customer information and date-->
+            <table width="500px">
+                <thead>
+                    <th align="left"></th><th id="myDate" align="right"></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> </td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Table for data regarding bill-->
+            <table align="center" border="1" rules="all" frame="box" id="myTable">
+                <thead>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Product Model</th>
+                    <th>Product Price</th>
+                    <th>Product Quantity</th>
+                    <th>Net Price</th>
+                </thead>
+               <!-- <tbody>
+                </tbody>
+                <tfoot>
+                    
+                </tfoot>-->
+            </table>
+        </div>
     </body>
 </html>
